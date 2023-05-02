@@ -1,0 +1,109 @@
+*
+    margin: 0
+header
+    height: 13vh
+    background-color: $darkgray
+    display: flex
+    align-items: center
+    justify-content: space-around
+    .logo
+        color: white
+        font-size: 2vw
+        cursor: pointer
+    #mobileMenu,.menuON,.menuOFF
+        display: none
+    nav
+        width: 50%
+        .links
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: space-around
+            li
+                list-style: none
+                a
+                    color: white
+                    text-decoration: none
+                    padding: 2vw
+                    font-size: 1vw
+                    color: gray
+                a:hover
+                    background-color: $blue
+                    color: white
+
+@media ( max-width: 425px)
+    header
+        height: 10vh
+        background-color: $darkgray
+        display: block
+        position: fixed
+        width: 100%
+        z-index: 9999
+        #mobileMenu,.menuON,.menuOFF
+            display: initial
+        .logo
+            color: white
+            font-size: 6vw
+            position: absolute
+            top: 50%
+            left: 10%
+            transform: translate(-10%,-50%)
+        .menuON
+            color: white
+            position: absolute
+            right: 5%
+            top: 50%
+            transform: translate(-5%,-50%)
+            transition: 0.4s
+        .menuOFF
+            color: white
+            position: absolute
+            right: 10%
+            top: 50%
+            transform: translate(-10%,-50%)
+            display: none
+            transition: 0.4s
+        #mobileMenu
+            position: absolute
+            right: 5%
+            width: 10vw
+            height: 10vh
+            z-index: 3
+            appearance: none
+            -webkit-appearance: none
+        #mobileMenu:checked+.menuON
+            display: none
+        #mobileMenu:checked+.menuON+.menuOFF
+            display: initial
+        #mobileMenu:checked+.menuON+.menuOFF+nav
+            right: 0
+            z-index: 9999
+
+        nav
+            width: 30%
+            height: 60vh
+            padding: 0
+            background-color: $darkgray
+            position: fixed
+            right: -100%
+            top: 10vh
+            transition: 0.4s
+            .links
+                height: 100%
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: space-around
+                li
+                    list-style: none
+                    padding: 3vw
+                    margin-right: 50%
+
+                    a
+                        color: white
+                        text-decoration: none
+                        font-size: 3vw
+                        color: gray
+                    a:hover
+                        background-color: $blue
+                        color: white
